@@ -4,10 +4,17 @@ import com.sim.network.NetworkEntity;
 
 public class Event implements Comparable{
 	
+	public enum EventType{
+		START_SEND,
+		SEND_DONE;
+	}
+	
 	long timeStamp;
+	EventType type;
 	NetworkEntity source, target;
 	
-	public Event(long ts, NetworkEntity src, NetworkEntity trg){
+	public Event(EventType t, long ts, NetworkEntity src, NetworkEntity trg){
+		type = t;
 		timeStamp = ts;
 		source = src;
 		target = trg;
