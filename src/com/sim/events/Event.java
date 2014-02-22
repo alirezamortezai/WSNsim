@@ -59,4 +59,9 @@ public class Event implements Comparable{
 		return timeStamp;
 	}
 
+	public NetworkEntity getTarget() {
+		// TODO Auto-generated method stub
+		return target;
+	}
+
 }

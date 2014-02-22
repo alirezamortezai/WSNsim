@@ -2,12 +2,12 @@ package com.sim.network;
 
 import com.sim.events.Event;
 
-
-public class Link extends NetworkEntity{
+public class SensorMote extends Mote {
 
 	@Override
-	void handleGenericEvent(Event e) {
+	protected void handleMoteEvent(Event e) {
 		// TODO Auto-generated method stub
-		
+
 	}
+
 }

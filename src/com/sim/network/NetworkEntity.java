@@ -7,7 +7,7 @@ public abstract class NetworkEntity {
 	
 	Driver driver;
 	
-	abstract void consume(Event e);
+	abstract void handleGenericEvent(Event e);
 	public final void setMainDriver(Driver d){
 		driver = d;
 	}
