@@ -3,12 +3,18 @@ package com.sim.events;
 import java.util.ArrayList;
 
 import com.sim.network.NetworkEntity;
+import com.sim.util.Timer;
 
 public class Event implements Comparable{
 	
 	public enum EventType{
-		START_SEND,
-		SEND_DONE;
+		NULL,
+		LINK_TRANSMIT,
+		NODE_RECEIVE,
+		NODE_START_SEND,
+		NODE_DONE_SEND,
+		NODE_START_MOVE,
+		NODE_DONE_MOVE;
 	}
 	
 	long timeStamp;
@@ -16,9 +22,9 @@ public class Event implements Comparable{
 	NetworkEntity source, target;
 	ArrayList<Object> extraPars;
 	
-	public Event(EventType t, long ts, NetworkEntity src, NetworkEntity trg, ArrayList<Object> ext){
+	public Event(EventType t, long timeUntil, NetworkEntity src, NetworkEntity trg, ArrayList<Object> ext){
 		type = t;
-		timeStamp = ts;
+		timeStamp = Timer.getTime() + timeUntil;
 		source = src;
 		target = trg;
 		extraPars = new ArrayList<Object>();
@@ -47,6 +53,10 @@ public class Event implements Comparable{
 			return 0;
 		else
 			return 1;
+	}
+	
+	public long getTimeStamp(){
+		return timeStamp;
 	}
 
 }

@@ -45,7 +45,10 @@ public class EventQ {
 	public Event dequeue(){
 		if(Q.isEmpty())
 			return null;
-		else
-			return Q.remove(0);
+		else{
+			Event e = Q.remove(0);
+			Timer.setTime(e.getTimeStamp());
+			return e;
+		}
 	}
 }
