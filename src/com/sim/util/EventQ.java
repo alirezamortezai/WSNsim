@@ -16,9 +16,9 @@ public class EventQ {
 	
 	public static EventQ getEventQ(){
 		if(singleQ == null)
-			return (singleQ = new EventQ());
-		else
-			return singleQ;
+			singleQ = new EventQ();
+		
+		return singleQ;
 	}
 	
 	public void enqueue(Event e){
