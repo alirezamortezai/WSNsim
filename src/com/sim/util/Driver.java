@@ -16,7 +16,7 @@ public class Driver {
 	private Driver(){}
 	
 	
-	Driver getDriver(){
+	public static Driver getDriver(){
 		if(drv == null) {
 			drv = new Driver();
 	      }

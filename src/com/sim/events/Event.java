@@ -63,5 +63,8 @@ public class Event implements Comparable{
 		// TODO Auto-generated method stub
 		return target;
 	}
-
+	
+	public EventType getType(){
+		return type;
+	} 
 }
